@@ -1,0 +1,580 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.button-one {
+    width: 100%;
+    height: 20%;
+    background: linear-gradient( #55EFCB 0%, #5BCAFF 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border-button-1 {
+    text-decoration: none;
+   /* display: inline-block; */
+    padding: 20px 30px;
+    margin: 10px 20px;
+    position: relative;
+    color: white;
+    border: 1px solid #ffffff66;
+    background: none;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  
+}
+
+.border-button-1::before, .border-button-1::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.border-button-1::before {
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height.6s ;
+}
+
+.border-button-1:after {
+    top: 0;
+    right: 0;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+  }
+  .border-button-1:hover:before, 
+  .border-button-1:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+  .border-button-1:hover:before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+  }
+  .border-button-1:hover:after {
+    transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+  }
+  .border-button-1:hover {
+    background: rgba(255, 255, 255, .2);
+    
+  }
+
+
+
+
+  /* ? ####  BUTTON-2 #### */
+
+  .button-two {
+    width: 100%;
+    height: 20%;
+    background: #1D1B26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sliding-button {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+    border-image-slice: 1;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+  }
+  .sliding-button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+    background-color: red;
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+  }
+  .sliding-button:hover {
+    background: rgba(255, 255, 255, 0);
+  }
+  .sliding-button:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+  }
+
+
+  /*  ? ####  button 3 #### */
+
+  .button-three {
+    width: 100%;
+    height: 20%;
+    background: #25b4b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animated-button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 15px 30px;
+    overflow: hidden;
+    border: 2px solid;
+    border-bottom-width: 4px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgba(30, 255, 188, 1);
+    background: rgba(255, 255, 255, 1);
+    transition: color .3s, background .5s;
+  }
+  .animated-button:hover {
+    animation: stripes .75s infinite linear;
+    background: linear-gradient(45deg, rgba(30, 255, 188, 1) 25%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 50%, rgba(30, 255, 188, 1) 50%, rgba(30, 255, 188, 1) 75%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1));
+    background-size: 10px 10px;
+    color: #FF50E5;
+  }
+  @keyframes stripes {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 0;
+    }
+  }
+
+
+  /* ? #### 4 #### */
+
+  .button-four {
+    width: 100%;
+    height: 20%;
+    background: #A4DADA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .glow-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #F137A6 inset, 0 0 0 0 #F137A6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    transition: .15s ease-in-out;
+  }
+  .glow-button:hover {
+    box-shadow: 0 0 10px 0 #F137A6 inset, 0 0 10px 4px #F137A6;
+    color: #F137A6;
+  }
+
+
+  /* ? #### 5 #### */
+
+  .button-five {
+    width: 100%;
+    height: 20%;
+    background: #A4DADA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .closing-button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    color: white;
+    box-shadow: 0 0 0 2px white;
+    padding: 20px 0;
+    width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing-button span {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 5;
+  }
+  .closing-button:before, .closing-button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .closing-button:before {
+    transform: translateX(-100%);
+    background: white;
+    transition: transform .3s cubic-bezier(.55, .055, .675, .19);
+  }
+  .closing-button:after {
+    background: #413ad5;
+    transform: translateX(100%);
+    transition: transform .3s cubic-bezier(.16, .73, .58, .62) .3s;
+  }
+  .closing-button:hover:before, .closing-button:hover:after {
+    transform: translateX(0);
+  }
+
+
+  /* ? #### 6 #### */
+
+  .button-six {
+    width: 100%;
+    height: 20%;
+    background: #ffbfbe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shine-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fe6637;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fe6637;
+    transition: .2s ease-in-out;
+  }
+  .shine-button:before {
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+  }
+  .shine-button:hover {
+    background: #fe6637;
+    color: #fff;
+  }
+  .shine-button:hover:before {
+    left: 150px;
+    transition: .5s ease-in-out;
+  }
+
+
+
+  /* ? ####  7 #### */
+
+  .button-seven {
+    width: 100%;
+    height: 20%;
+    /* background: #393d47; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .button-7 {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin: 10px 20px;
+    color: white;
+    font-size: 14px;
+    background: #27282a4d; 
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.button-7:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 0;
+    right: 0;
+    background: linear-gradient(225deg, #BEFDE6 45%, #aaaaaa 50%, #cccccc 56%, white 80%);
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, .4);
+    transition: .3s;
+}
+.button-7:hover:before {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* ? E#####  8  ######## */
+
+.button-eight {
+    width: 100%;
+    height: 20%;
+    /* background: #393d47; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+.btn {
+    position: relative;
+    padding: 15px 30px;
+    margin: 0 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+    font-weight: 600;
+    background: #c81965;
+    border-width: 0;
+    outline: none;
+    cursor: pointer;
+ }
+ .btn:before, .btn:after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background: #c81965;
+    transition: .3s cubic-bezier(.75, .24, .01, .9);
+ }
+ .btn:before {
+    top: 0;
+    right: -5px;
+ }
+ .btn:after {
+    bottom: 0;
+    left: -5px;
+ }
+ .btn:hover:before {
+    transform: translateX(-5px);
+ }
+ .btn:hover:after {
+    transform: translateX(5px);
+ }
+ .btn2, .btn2:before, .btn2:after {
+    background: #1f0b2f;
+ }
+ .text {
+    position: relative;
+    z-index: 2;
+ }
+
+
+ /* ? #### 9 #### */
+
+
+ .button-nine {
+    width: 100%;
+    height: 20%;
+    /* background: #393d47; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .btn-9 {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 10px 40px;
+    margin: 0 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 10px;
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    background: #f5b08f;
+    border-width: 0;
+    box-shadow: 5px 5px 0 #532831;
+    outline: none;
+    cursor: pointer;
+    transition: 1.5s;
+ }
+ .btn-9:before, .btn-9:after {
+    content: "";
+    position: absolute;
+    height: 200px;
+    left: -50%;
+    margin-top: -100px;
+    top: 50%;
+    width: 200px;
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: -1;
+    transform: scale(0);
+ }
+ .btn-9:before {
+    background: #ffeede;
+    transition: .8s ease-out;
+ }
+ .btn-9:after {
+    transition: .4s ease-in .3s;
+ }
+ .btn-9:hover {
+    color: #532831;
+ }
+ .btn-9:hover:before, .btn-9:hover:after {
+    opacity: 1;
+    transform: scale(4);
+ }
+
+
+ /* ? #### 10 #### */
+
+ .button-ten {
+    width: 100%;
+    height: 20%;
+    /* background: #393d47; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .transform-button {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-right: 20px;
+    border: 1px solid #68E5F7;
+    background: transparent;
+    color: #fff;
+    margin: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    perspective: 500px;
+    background: white;
+    transition: .3s;
+ }
+ .transform-button:last-of-type {
+    margin-right: 0;
+ }
+ .transform-button span {
+    position: relative;
+    z-index: 2;
+ }
+ .transform-button:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #68E5F7;
+    transform-origin: left;
+    transition: .5s;
+ }
+ .transform-button:hover {
+    color: #68E5F7;
+    border-color: #68E5F7;
+ }
+ .transform-button:hover:before {
+    transform: rotateY(92deg);
+ }
+
+
+ /* ? #### 11 ###### */
+
+ .button-wrapper {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    overflow: hidden;
+ }
+ .arrow-btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #2fc989;
+    border: 4px solid #2fc989;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .4em;
+    transition: .2s;
+    transition-delay: .1s;
+ }
+ .arrow-btn:hover {
+    color: white;
+    padding: 15px 35px;
+ }
+ .arrow-btn span {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    overflow: hidden;
+    transition: .35s cubic-bezier(.215, .61, .215, 1);
+ }
+ .arrow-btn span:before {
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -210%;
+    width: 200%;
+    height: 108%;
+    background: #2fc989;
+    transform: skew(-15deg, 0);
+    transition: .5s;
+ }
+ .arrow-btn:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: -1000%;
+    height: 2px;
+    margin-top: -1px;
+    width: 400%;
+    background: #2fc989;
+    transition: .5s;
+ }
+ .arrow-btn:hover:after {
+    width: 140%;
+    left: -20%;
+ }
+ .arrow-btn:hover span:before {
+    left: -25%;
+ }
